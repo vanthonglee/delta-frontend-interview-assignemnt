@@ -4,7 +4,7 @@ import { Container, Header, Main, Footer, Cards } from "@components";
 
 const Home: React.FC = () => {
     return (
-        <Container>
+        <Container data-theme="dark">
             <Header />
             <Main />
             <Cards />

@@ -7,9 +7,11 @@ import store from "@redux/store";
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     return (
-        <Provider store={store}>
-            <Component {...pageProps} />
-        </Provider>
+        <html data-theme="cyberpunk">
+            <Provider store={store}>
+                <Component {...pageProps} />
+            </Provider>
+        </html>
     );
 }
 

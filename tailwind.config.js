@@ -2,10 +2,14 @@ module.exports = {
     purge: ["./pages/**/*.tsx", "./src/**/*.tsx"],
     darkMode: false, // or 'media' or 'class'
     theme: {
-        extend: {},
+        extend: {
+            aspectRatio: {
+                "mv-banner": "100 / 148",
+            },
+        },
     },
     variants: {
         extend: {},
     },
-    plugins: [],
+    plugins: [require("daisyui")],
 };

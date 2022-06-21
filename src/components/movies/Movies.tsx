@@ -1,9 +1,21 @@
+import clsx from "clsx";
 import React from "react";
+import styles from "../../styles/movies.module.scss";
+import { MovieCard } from "./MovieCard";
 
-export const Movies: React.FC = () => {
+export const Movies = (): JSX.Element => {
     return (
-        <div className="flex-1 container my-8 max-w-screen-lg mx-auto p-5">
-            Movie List
-        </div>
+        <section className="flex-1 container my-8 mx-auto">
+            <div
+                className={clsx(
+                    [styles.movies__list],
+                    "grid grid-cols-4 lg:grid-cols-5",
+                )}
+            >
+                {[...Array(100)].map((_, i) => (
+                    <MovieCard key={`mvc-${i}`} />
+                ))}
+            </div>
+        </section>
     );
 };
