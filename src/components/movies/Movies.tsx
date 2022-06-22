@@ -5,6 +5,7 @@ import { MovieCard } from "./MovieCard";
 import { useInfiniteQuery } from "react-query";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Search from "@components/search";
+import { MovieProps } from "src/types";
 
 export const Movies = (): JSX.Element => {
     const [searchText, setSearchText] = useState<string>("Marvel");
@@ -55,6 +56,7 @@ export const Movies = (): JSX.Element => {
                     dataLength={data?.pages.length * 10}
                     next={fetchNextPage}
                     hasMore={Boolean(hasNextPage)}
+                    scrollThreshold="150px"
                     loader={<h1 className="text-8xl">Loading...</h1>}
                 >
                     <div
@@ -65,12 +67,13 @@ export const Movies = (): JSX.Element => {
                     >
                         {data?.pages.map((page) => (
                             <>
-                                {page?.Search?.map((movie) => (
+                                {page?.Search?.map((movie: MovieProps) => (
                                     <MovieCard
                                         key={`mvc-${movie.imdbID}`}
                                         imdbID={movie.imdbID}
-                                        imgUrl={movie.Poster}
-                                        title={movie.Title}
+                                        Poster={movie.Poster}
+                                        Title={movie.Title}
+                                        Year={movie.Year}
                                     />
                                 ))}
                             </>

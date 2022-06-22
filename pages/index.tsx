@@ -1,14 +1,13 @@
 import React from "react";
 
-import { Container, Header, Main, Footer, Cards } from "@components";
+import { Container, Header } from "@components";
+import { Movies } from "@components/movies";
 
 const Home: React.FC = () => {
     return (
-        <Container data-theme="dark">
+        <Container>
             <Header />
-            <Main />
-            <Cards />
-            <Footer />
+            <Movies />
         </Container>
     );
 };

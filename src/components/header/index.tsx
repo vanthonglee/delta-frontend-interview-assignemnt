@@ -1,14 +1,16 @@
 import React from "react";
 
-import { Logo } from "@components";
 import Link from "next/link";
 
 export const Header: React.FC = () => {
     return (
-        <h1 className="text-center bg-gray-800 text-white py-4 text-2xl">
-            <Link href="/movies">
-                <a>Search Movies</a>
+        <section
+            className="text-center bg-gray-800 text-white py-4 text-2xl w-full mx-auto"
+            data-test="page-heading"
+        >
+            <Link href="/">
+                <h1>Search Movies</h1>
             </Link>
-        </h1>
+        </section>
     );
 };

@@ -3,7 +3,6 @@ import { AppProps } from "next/app";
 import "tailwindcss/tailwind.css";
 import "@styles/global.scss";
 import { Provider } from "react-redux";
-import store from "@redux/store";
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
 import { useState } from "react";
 
@@ -25,12 +24,10 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         <html data-theme="luxury">
             <QueryClientProvider client={queryClient}>
                 <Hydrate state={pageProps.dehydratedState}>
-                    <Provider store={store}>
-                        <Component {...pageProps} />
-                        <ReactQueryDevtools
-                            initialIsOpen={false}
-                        ></ReactQueryDevtools>
-                    </Provider>
+                    <Component {...pageProps} />
+                    <ReactQueryDevtools
+                        initialIsOpen={false}
+                    ></ReactQueryDevtools>
                 </Hydrate>
             </QueryClientProvider>
         </html>

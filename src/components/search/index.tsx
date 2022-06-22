@@ -26,6 +26,7 @@ const Search = ({
         <div className={clsx(["form-control", className])}>
             <div className="input-group">
                 <input
+                    data-test="input-search"
                     ref={inputRef}
                     type="text"
                     placeholder="Search…"
