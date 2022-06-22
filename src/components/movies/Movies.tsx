@@ -5,11 +5,11 @@ import { MovieCard } from "./MovieCard";
 
 export const Movies = (): JSX.Element => {
     return (
-        <section className="flex-1 container my-8 mx-auto">
+        <section className="flex-1 lg:container my-8 mx-auto">
             <div
                 className={clsx(
                     [styles.movies__list],
-                    "grid grid-cols-4 lg:grid-cols-5",
+                    "grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 lg:grid-cols-5",
                 )}
             >
                 {[...Array(100)].map((_, i) => (

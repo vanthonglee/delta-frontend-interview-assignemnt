@@ -6,6 +6,7 @@ module.exports = {
             aspectRatio: {
                 "mv-banner": "100 / 148",
             },
+            screens: {},
         },
     },
     variants: {
