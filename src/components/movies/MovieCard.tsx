@@ -1,22 +1,40 @@
 import { StarIcon } from "@components/icons";
+import Link from "next/link";
 import React from "react";
 
-export const MovieCard = (): JSX.Element => {
+type MovieProps = {
+    imdbID: string;
+    imgUrl?: string;
+    title?: string;
+};
+
+export const MovieCard = ({
+    imgUrl,
+    title,
+    imdbID,
+}: MovieProps): JSX.Element => {
     return (
         <div className="w-full  flex flex-col p-3">
             <div className="bg-neutral shadow-xl rounded-lg overflow-hidden flex-1 flex flex-col">
-                <a className="aspect-mv-banner" href="#">
-                    <div
-                        className="bg-cover h-full"
-                        style={{
-                            backgroundImage:
-                                "url(https://images.unsplash.com/photo-1523978591478-c753949ff840?w=900)",
-                        }}
-                    />
-                </a>
+                <Link href={`/movies/${imdbID}`}>
+                    <a className="aspect-mv-banner" title={title}>
+                        {imgUrl !== "N/A" ? (
+                            <div
+                                className="bg-cover h-full"
+                                style={{
+                                    backgroundImage: `url(${imgUrl})`,
+                                }}
+                            />
+                        ) : (
+                            <div className=" h-full bg-gray-300 animate-pulse" />
+                        )}
+                    </a>
+                </Link>
                 <div className="p-4 flex-1 flex flex-col" style={{}}>
-                    <h3 className="mb-4 text-2xl">
-                        <a href="#">My heading</a>
+                    <h3 className="mb-4 text-2xl line-clamp-2">
+                        <Link href={`/movies/${imdbID}`}>
+                            <a title={title}>{title}</a>
+                        </Link>
                     </h3>
                     <div
                         className="flex items-center text-xs text-grey hover:text-red uppercase no-underline tracking-wide"

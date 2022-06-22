@@ -7,3 +7,4 @@ export { default as YoutubeIcon } from "./YoutubeIcon";
 export { default as SunIcon } from "./SunIcon";
 export { default as MoonIcon } from "./MoonIcon";
 export { default as StarIcon } from "./StarIcon";
+export { default as SearchIcon } from "./SearchIcon";

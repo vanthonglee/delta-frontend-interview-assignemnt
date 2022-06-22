@@ -8,10 +8,6 @@ const Home: React.FC = () => {
     return (
         <Container>
             <Header />
-            {/* Search Input */}
-            <section className="flex justify-center my-5">
-                <Search />
-            </section>
             <Movies />
             <Footer />
         </Container>
