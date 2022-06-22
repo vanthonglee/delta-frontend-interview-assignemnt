@@ -97,7 +97,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     }
 
     const response = await fetch(
-        `http://www.omdbapi.com/?apikey=b9bd48a6&i=${id}`,
+        `https://www.omdbapi.com/?apikey=b9bd48a6&i=${id}`,
     );
     const movie = await response.json();
 

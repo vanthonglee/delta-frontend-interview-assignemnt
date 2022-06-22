@@ -28,7 +28,7 @@ export const Movies = (): JSX.Element => {
             "infiniteMovies",
             async ({ pageParam = 1 }) =>
                 await fetch(
-                    `http://www.omdbapi.com/?apikey=b9bd48a6&s=${searchText}&type=movie&page=${pageParam}`,
+                    `https://www.omdbapi.com/?apikey=b9bd48a6&s=${searchText}&type=movie&page=${pageParam}`,
                 ).then((result) => {
                     return result.json();
                 }),
