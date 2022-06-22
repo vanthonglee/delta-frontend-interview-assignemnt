@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import React, { useState, useEffect } from "react";
-import styles from "../../styles/movies.module.scss";
 import { MovieCard } from "./MovieCard";
 import { useInfiniteQuery } from "react-query";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -61,7 +60,6 @@ export const Movies = (): JSX.Element => {
                 >
                     <div
                         className={clsx(
-                            [styles.movies__list],
                             "grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 lg:grid-cols-5",
                         )}
                     >
