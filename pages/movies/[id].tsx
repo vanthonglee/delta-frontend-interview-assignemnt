@@ -4,6 +4,7 @@ import { Container, Header } from "@components";
 import { useRouter } from "next/router";
 import { StarIcon } from "@components/icons";
 import { MovieProps } from "src/types";
+import { GetServerSideProps } from "next";
 
 const MovieDetailPage = ({ movie }: { movie: MovieProps }): JSX.Element => {
     const router = useRouter();
@@ -88,8 +89,8 @@ const redirectHome = {
 };
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export async function getServerSideProps({ params }) {
-    const id = params.id;
+export const getServerSideProps: GetServerSideProps = async (context) => {
+    const id = context?.params?.id;
 
     if (!id) {
         return redirectHome;
@@ -106,6 +107,6 @@ export async function getServerSideProps({ params }) {
 
     // Pass data to the page via props
     return { props: { movie } };
-}
+};
 
 export default MovieDetailPage;
