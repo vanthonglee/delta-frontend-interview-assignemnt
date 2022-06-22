@@ -2,7 +2,6 @@ import React from "react";
 import { AppProps } from "next/app";
 import "tailwindcss/tailwind.css";
 import "@styles/global.scss";
-import { Provider } from "react-redux";
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
 import { useState } from "react";
 
