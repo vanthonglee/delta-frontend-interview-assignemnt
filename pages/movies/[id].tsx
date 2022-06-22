@@ -90,6 +90,11 @@ const redirectHome = {
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const getServerSideProps: GetServerSideProps = async (context) => {
+    context.res.setHeader(
+        "Cache-Control",
+        "public, s-maxage=10, stale-while-revalidate=59",
+    );
+
     const id = context?.params?.id;
 
     if (!id) {
